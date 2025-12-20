@@ -48,7 +48,7 @@ function getCleanUrl(urlStr) {
             url.searchParams.delete('t'); changed = true;
         }
         if (config.removePlaylist && url.searchParams.has('list')) {
-            url.searchParams.delete('list'); url.searchParams.delete('index'); changed = true;
+            url.searchParams.delete('list'); url.searchParams.delete('start_radio'); url.searchParams.delete('index'); changed = true;
         }
 
         return changed ? url.toString() : null;
