@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "YouTube Link Cleaner",
-    "version": "1.1",
-    "description": "유튜브 추적 코드를 진입 시점과 복사 시점에 모두 제거합니다.",
+    "version": "1.2",
+    "description": "유튜브 페이지 접속 시 추적 태그를 차단하고, 주소창과 공유링크 생성 시 불필요한 파라미터를 제거합니다.",
     "permissions": [
         "storage",
         "declarativeNetRequest"
