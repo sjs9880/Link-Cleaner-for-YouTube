@@ -3,6 +3,7 @@ let config = {
     removeTracking: true,
     removeTime: false,
     removePlaylist: false,
+    removeLC: false,
     convertShorts: false,
     copyMarkdown: false
 };
@@ -49,6 +50,9 @@ function getCleanUrl(urlStr) {
         }
         if (config.removePlaylist && url.searchParams.has('list')) {
             url.searchParams.delete('list'); url.searchParams.delete('start_radio'); url.searchParams.delete('index'); changed = true;
+        }
+        if (config.removeLC && url.searchParams.has('lc')) {
+            url.searchParams.delete('lc'); changed = true;
         }
 
         return changed ? url.toString() : null;

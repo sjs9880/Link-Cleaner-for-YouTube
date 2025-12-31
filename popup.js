@@ -2,6 +2,7 @@ const settingKeys = [
     'removeTracking',
     'removeTime',
     'removePlaylist',
+    'removeLC',
     'convertShorts',
     'copyMarkdown'
 ];
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('removeTracking').checked = items.removeTracking !== false;
         document.getElementById('removeTime').checked = items.removeTime === true;
         document.getElementById('removePlaylist').checked = items.removePlaylist === true;
+        document.getElementById('removeLC').checked = items.removeLC === true;
         document.getElementById('convertShorts').checked = items.convertShorts === true;
         document.getElementById('copyMarkdown').checked = items.copyMarkdown === true;
     });
