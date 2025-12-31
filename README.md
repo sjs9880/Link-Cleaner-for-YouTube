@@ -1,4 +1,4 @@
-# YouTube Link Cleaner
+# Link Cleaner for YouTube
 본 프로젝트의 모든 코드는 AI를 통해 생성되었습니다.
 
 유튜브 링크에서 불필요한 추적 코드를 자동으로 제거하고, 깔끔한 링크를 공유할 수 있도록 도와주는 크롬 확장 프로그램입니다.
