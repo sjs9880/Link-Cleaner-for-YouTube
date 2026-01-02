@@ -87,9 +87,29 @@ function runCleaner() {
 
 // === 복사 이벤트 가로채기 ===
 document.addEventListener('copy', (e) => {
-    const selection = document.getSelection().toString();
+    const selection = document.getSelection().toString().trim();
     let targetUrl = null;
 
+    // 1. Iframe 퍼가기 코드인 경우
+    if (selection.startsWith('<iframe') && selection.includes('src="')) {
+        const srcMatch = selection.match(/src="([^"]+)"/);
+        if (srcMatch && srcMatch[1]) {
+            const originalSrc = srcMatch[1];
+            // getCleanUrl은 URL 객체 생성을 시도하므로, 상대 경로라면 처리가 필요할 수 있으나
+            // 유튜브 퍼가기 코드는 보통 절대 경로임.
+            const cleanSrc = getCleanUrl(originalSrc);
+
+            if (cleanSrc) {
+                // src 속성만 교체
+                const cleanSelection = selection.replace(originalSrc, cleanSrc);
+                e.preventDefault();
+                e.clipboardData.setData('text/plain', cleanSelection);
+                return;
+            }
+        }
+    }
+
+    // 2. 일반 URL 또는 텍스트인 경우
     if (selection.includes('youtube.com') || selection.includes('youtu.be')) {
         targetUrl = selection;
     } else if (window.location.href.includes('watch') || window.location.href.includes('shorts')) {
