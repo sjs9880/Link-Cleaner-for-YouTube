@@ -9,7 +9,7 @@
             }
         },
         "condition": {
-            "regexFilter": "^(.*)([?&])(?:si|feature|pp|gclid|embeds_referring_euri)=[^&]+&(.*)$",
+            "regexFilter": "^(.*)([?&])(?:si|feature|pp|gclid|embeds_referring_euri|source_ve_path)=[^&]+&(.*)$",
             "resourceTypes": [
                 "main_frame"
             ]
@@ -25,7 +25,7 @@
             }
         },
         "condition": {
-            "regexFilter": "^(.*)[?&](?:si|feature|pp|gclid|embeds_referring_euri)=[^&]+$",
+            "regexFilter": "^(.*)[?&](?:si|feature|pp|gclid|embeds_referring_euri|source_ve_path)=[^&]+$",
             "resourceTypes": [
                 "main_frame"
             ]
